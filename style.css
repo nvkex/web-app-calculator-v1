@@ -1,0 +1,156 @@
+<!Doctype html>
+<html>
+
+<head>
+	<title>Calculator</title>
+</head>
+
+<style>
+	body{
+		transition: 0.5s;
+		font-family: Courier New;
+	}
+
+	input{
+		font-family: Courier New;
+		border:1px solid grey;
+		color:black;
+		padding:15px 10px 15px 10px;
+		font-size:20px ;
+		background-color: white;
+		border-radius: 10px;
+	}
+
+	td{
+		cursor: pointer;
+		border-radius: 20px 0 20px;
+		background-color:#404040;
+		color:white;
+		font-size: 40px;
+		padding:10px 50px 10px 50px;
+	}
+	td:hover{
+		background-color: #4d4d4d;
+	}
+	td:active{
+		background-color: #666666;
+	}
+
+	.text-box{
+		background-color: #3CBC8D;
+		padding: 0 0 20px 0;
+	}
+
+	.text-box:hover{
+		background-color: #3CBC8D;
+	}
+
+	.in-page-title{
+		font-size: 45px;
+		color:grey;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.div-container{
+		box-shadow: 0px 0px 16px 3px rgba(212,212,212,1);
+		background-color:#3CBC8D; /*#b3b3b3;*/
+		border-radius: 40px;
+		border: 1px solid grey;
+		padding:90px 0 90px 0;
+		margin:10px 400px 0px 400px;
+	}
+
+	.info{
+		font-size: 20px;
+		padding-left: 40px;
+		cursor: pointer;
+		color: grey;
+	}
+
+	.info:hover{
+		color: black;
+	}
+
+</style>
+<body>
+	<p class = "in-page-title" align = "center">CALCULATOR</p>
+
+	<div class = "div-container">
+		<table align = "center" border = "0" cellspacing="2" cellpadding = "20">
+
+			<tr>
+				<td class = "text-box" colspan="4">
+					<input type = "text" disabled = "disabled" size = "50" value = "0" id = "screen">
+				</td>
+			</tr>
+
+			<tr>
+				<td align = "center" onclick = "numOp(7)" >7</td>
+				<td align = "center" onclick = "numOp(8)" >8</td>
+				<td align = "center" onclick = "numOp(9)" >9</td>
+				<td align = "center" onclick = "numOp('/')" >/</td>
+			</tr>
+
+			<tr>
+				<td align = "center" onclick = "numOp(4)" >4</td>
+				<td align = "center" onclick = "numOp(5)" >5</td>
+				<td align = "center" onclick = "numOp(6)" >6</td>
+				<td align = "center" onclick = "numOp('*')" >*</td>
+			</tr>
+
+			<tr>
+				<td align = "center" onclick = "numOp(1)" >1</td>
+				<td align = "center" onclick = "numOp(2)" >2</td>
+				<td align = "center" onclick = "numOp(3)" >3</td>
+				<td align = "center" onclick = "numOp('+')" >+</td>
+			</tr>
+
+			<tr>
+				<td align = "center" onclick = "clearscr()">C</td>
+				<td align = "center" onclick = "numOp(0)" >0</td>
+				<td align = "center" onclick = "backspc()"><</td>
+				<td align = "center" onclick = "numOp('-')" >-</td>
+			</tr>
+
+			<tr>
+				<td align = "center" colspan="4" onclick = "evaluate()">=</td>
+			</tr>
+		</table>
+	</div>
+		<p class = "info" onclick = "introduce()">ABOUT</p>
+</body>
+
+<script>
+	var _0x1a3f=["\x73\x63\x72\x65\x65\x6E","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x20\x53\x69\x6D\x70\x6C\x65\x20\x43\x61\x6C\x63\x75\x6C\x61\x74\x6F\x72\x20\x42\x79\x20\x40\x6E\x76\x6B\x65\x78\x20","\x76\x61\x6C\x75\x65","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72\x69\x62\x75\x74\x65","\x73\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65"];function introduce(){var _0x16d5x2=document[_0x1a3f[1]](_0x1a3f[0]);var _0x16d5x3=_0x1a3f[2];_0x16d5x2[_0x1a3f[4]](_0x1a3f[3]);_0x16d5x2[_0x1a3f[5]](_0x1a3f[3],_0x16d5x3)}
+
+	function numOp(n){
+		var scr = document.getElementById("screen");
+		var line = scr.value;
+		if(line == "0")
+			line = "";
+		line = line.concat(n);
+		scr.removeAttribute("value");
+		scr.setAttribute("value",line);
+	}
+
+	function clearscr(){
+		var scr = document.getElementById("screen");
+		var str = "0";
+		scr.removeAttribute("value");
+		scr.setAttribute("value",str);
+	}
+
+	function backspc(){
+		var scr = document.getElementById("screen");
+		var line = scr.value;
+		if(line.length == 1)
+			line = "0";
+		else{
+			line = line.slice(0,-1);	
+		}
+		scr.removeAttribute("value");
+		scr.setAttribute("value",line);		
+	}
+</script>
+</html>

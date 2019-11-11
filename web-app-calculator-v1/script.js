@@ -29,3 +29,77 @@
 		scr.removeAttribute("value");
 		scr.setAttribute("value",line);		
 	}
+
+	function evalExp(){
+		var scr = document.getElementById("screen");
+		var line = scr.value + "="; //Full expression
+		var res = 0; //Result
+		var nxt = "";
+		var op = '+';
+
+		for(var i=0;i<line.length;i++){
+
+			//get numbers and operators
+			if(line.charAt(i).match(/\d/)!=null)
+				nxt = nxt + line.charAt(i);
+			else{
+				nxt = Number(nxt);
+				switch(op){
+					case '+':
+						res = (res + nxt);
+						break;
+					case '-':
+						res = (res - nxt);
+						break;
+					case '*':
+						res = (res * nxt);
+						break;
+					case '/':
+						res = (res / nxt);
+						break;
+				}
+
+				op = line.charAt(i);
+				nxt = "";
+			}
+		}
+
+		line = line + String(res);
+		scr.removeAttribute("value");
+		scr.setAttribute("value",line);	
+	}
+
+	function changeColor(x){
+		var box = document.getElementById("divContnr");
+
+		if(x==1){
+			box.style.backgroundColor = "rgb(153,102,255,0.7)";
+		}
+		else if(x==2){
+			box.style.backgroundColor = "rgb(209,71,163,0.7)";
+		}
+		else if(x==3){
+			box.style.backgroundColor = "rgb(255,153,51,0.7)";
+		}
+		else if(x==4){
+			box.style.backgroundColor = "rgb(255,77,77,0.7)";
+		}
+		else if(x==5){
+			box.style.backgroundColor = "rgb(255,119,51,0.7)";
+		}
+		else if(x==6){
+			box.style.backgroundColor = "rgb(255,255,77,0.7)";
+		}
+		else if(x==7){
+			box.style.backgroundColor = "rgb(64,191,128,0.7)";
+		}
+		else if(x==8){
+			box.style.backgroundColor = "rgb(71,117,209,0.7)";
+		}
+		else if(x==9){
+			box.style.backgroundColor = "rgb(255,255,255,0.7)";
+		}
+		else{
+			box.style.backgroundColor = "rgb(60, 188, 141,0.7)";
+		}
+	}

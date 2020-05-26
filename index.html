@@ -1,0 +1,77 @@
+<!Doctype html>
+<html>
+
+<head>
+	<title>Calculator</title>
+</head>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<style>
+	body{
+		font-family: Courier New;
+	}
+</style>
+<body>
+	<p class = "in-page-title" align = "center">CALCULATOR</p>
+
+	<div class = "div-container" id = "divContnr">
+		<table align = "center" border = "0" cellspacing="2" cellpadding = "20">
+
+			<tr>
+				<td class = "text-box" colspan="4">
+					<input type = "text" disabled = "disabled" size = "50" value = "0" id = "screen">
+				</td>
+			</tr>
+
+			<tr>
+				<td align = "center" onclick = "numOp(7)" >7</td>
+				<td align = "center" onclick = "numOp(8)" >8</td>
+				<td align = "center" onclick = "numOp(9)" >9</td>
+				<td align = "center" onclick = "numOp('/')" >/</td>
+			</tr>
+
+			<tr>
+				<td align = "center" onclick = "numOp(4)" >4</td>
+				<td align = "center" onclick = "numOp(5)" >5</td>
+				<td align = "center" onclick = "numOp(6)" >6</td>
+				<td align = "center" onclick = "numOp('*')" >*</td>
+			</tr>
+
+			<tr>
+				<td align = "center" onclick = "numOp(1)" >1</td>
+				<td align = "center" onclick = "numOp(2)" >2</td>
+				<td align = "center" onclick = "numOp(3)" >3</td>
+				<td align = "center" onclick = "numOp('+')" >+</td>
+			</tr>
+
+			<tr>
+				<td align = "center" onclick = "clearscr()">C</td>
+				<td align = "center" onclick = "numOp(0)" >0</td>
+				<td align = "center" onclick = "backspc()"><</td>
+				<td align = "center" onclick = "numOp('-')" >-</td>
+			</tr>
+
+			<tr>
+				<td align = "center" colspan="4" onclick = "evalExp()">=</td>
+			</tr>
+		</table>
+	</div>
+	<span class = "info" onclick = "introduce()">ABOUT</span>
+	<table class = "color-picker-container">
+		<tr>
+			<td class = "purple-box" onclick = "changeColor(1)"></td>
+			<td class = "pink-box" onclick = "changeColor(2)"></td>
+			<td class = "orange-box" onclick = "changeColor(3)"></td>
+			<td class = "red-box" onclick = "changeColor(4)"></td>
+			<td class = "brown-box" onclick = "changeColor(5)"></td>
+			<td class = "yellow-box" onclick = "changeColor(6)"></td>
+			<td class = "dark-green-box" onclick = "changeColor(7)"></td>
+			<td class = "blue-box" onclick = "changeColor(8)"></td>
+			<td class = "white-box" onclick = "changeColor(9)"></td>
+			<td class = "default-color" onclick = "changeColor(0)"></td>
+		</tr>
+	</table>
+</body>
+
+<script src="script.js"></script>
+</html>

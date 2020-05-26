@@ -2,4 +2,3 @@
 Simple Calculator Web App
 Calculator made using HTML, CSS and Javascript.
 
-All functions are working except '='.
